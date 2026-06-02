@@ -15,3 +15,15 @@ models:
     columns:
       - name: order_date
         data_tests: [unique, not_null]
+
+  - name: dim_customers
+    description: "One row per customer with attributes + lifetime spend/orders and favorite category."
+    columns:
+      - name: customer_id
+        description: "Primary key - one row per customer."
+        data_tests: [unique, not_null]
+      - name: favorite_category
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['coffee', 'tea', 'pastry']
