@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "One row per item ordered, enriched with customer + product + revenue. The table Sigma connects to."
+    columns:
+      - name: order_id
+        data_tests: [not_null]      # not unique: an order can have several items
+      - name: revenue
+        description: "quantity * unit_price for the line."
+        data_tests: [not_null]
+
+  - name: daily_sales
+    description: "Revenue and order counts rolled up per day."
+    columns:
+      - name: order_date
+        data_tests: [unique, not_null]

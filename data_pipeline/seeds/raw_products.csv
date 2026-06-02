@@ -1,0 +1,10 @@
+product_id,product_name,category,price
+101,Espresso,coffee,3.00
+102,Latte,coffee,4.50
+103,Cappuccino,coffee,4.25
+104,Cold Brew,coffee,4.75
+105,Green Tea,tea,3.50
+106,Chai Latte,tea,4.25
+107,Croissant,pastry,3.25
+108,Blueberry Muffin,pastry,3.00
+109,Bagel,pastry,2.75

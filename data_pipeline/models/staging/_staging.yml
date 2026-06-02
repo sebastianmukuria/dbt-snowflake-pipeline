@@ -1,0 +1,42 @@
+version: 2
+
+# Tests + docs for the staging models. `dbt test` runs all of these.
+#   unique / not_null  -> data quality on keys
+#   relationships      -> every order points at a real customer & product
+#   accepted_values    -> category is always one we expect
+models:
+  - name: stg_customers
+    description: "One row per coffee-shop customer."
+    columns:
+      - name: customer_id
+        description: "Primary key."
+        data_tests: [unique, not_null]
+
+  - name: stg_products
+    description: "One row per product on the menu."
+    columns:
+      - name: product_id
+        data_tests: [unique, not_null]
+      - name: category
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['coffee', 'tea', 'pastry']
+
+  - name: stg_orders
+    description: "One row per item ordered."
+    columns:
+      - name: order_id
+        data_tests: [unique, not_null]
+      - name: customer_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+      - name: product_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id

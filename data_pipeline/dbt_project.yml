@@ -1,0 +1,50 @@
+# =============================================================================
+# dbt project config for the Coffee Shop analytics pipeline.
+# `name` and `profile` must match: `profile` points at an entry in
+# ~/.dbt/profiles.yml that holds your Snowflake connection details.
+# =============================================================================
+name: 'data_pipeline'
+version: '1.0.0'
+profile: 'data_pipeline'
+
+# Where dbt looks for each kind of file. Defaults are fine.
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:            # removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+# --- How models get built in the warehouse -----------------------------------
+# staging -> cheap VIEWS (always reflect the latest seed data)
+# marts   -> TABLES (fast to query from a BI tool like Sigma)
+models:
+  data_pipeline:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+
+# --- Seeds (our raw CSVs) ----------------------------------------------------
+# Tell dbt the column types so dates load as DATE and money as NUMBER.
+seeds:
+  data_pipeline:
+    raw_customers:
+      +column_types:
+        customer_id: integer
+        signup_date: date
+    raw_products:
+      +column_types:
+        product_id: integer
+        price: number(10,2)
+    raw_orders:
+      +column_types:
+        order_id: integer
+        customer_id: integer
+        product_id: integer
+        order_date: date
+        quantity: integer
