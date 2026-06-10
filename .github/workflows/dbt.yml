@@ -35,8 +35,12 @@ jobs:
         working-directory: data_pipeline
         run: dbt debug
 
-      - name: dbt build (seed + run + test)
+      - name: dbt seed, run, test
         working-directory: data_pipeline
+        # Seed first (loads the raw tables), then run + test. Kept as separate
+        # steps because staging reads from sources, so the seed must finish
+        # before the models query those tables.
         run: |
           dbt seed --full-refresh
-          dbt build
+          dbt run
+          dbt test

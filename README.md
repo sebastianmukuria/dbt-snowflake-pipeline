@@ -67,8 +67,9 @@ cd data_pipeline
 dbt debug
 
 # 3. Build everything
-dbt seed     # load the CSVs into Snowflake
-dbt build    # run the models and tests
+dbt seed     # load the CSVs into Snowflake first
+dbt run      # build the models
+dbt test     # run the tests
 
 # 4. Optional: open the docs and lineage graph in a browser
 dbt docs generate && dbt docs serve
