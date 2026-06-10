@@ -1,0 +1,17 @@
+# dbt profile used ONLY by GitHub Actions CI.
+# Connection values come from repo secrets via env vars (see .github/workflows/dbt.yml).
+# Local development still uses ~/.dbt/profiles.yml — this file is selected in CI by
+# setting DBT_PROFILES_DIR to this directory.
+data_pipeline:
+  target: ci
+  outputs:
+    ci:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH') }}"
+      role: dbt_role
+      database: dbt_db
+      warehouse: dbt_wh
+      schema: dbt_schema
+      threads: 4

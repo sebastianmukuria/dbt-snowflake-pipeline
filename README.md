@@ -1,5 +1,7 @@
 # ☕ Coffee Shop Analytics — dbt + Snowflake Pipeline
 
+[![dbt build](https://github.com/sebastianmukuria/dbt-snowflake-pipeline/actions/workflows/dbt.yml/badge.svg)](https://github.com/sebastianmukuria/dbt-snowflake-pipeline/actions/workflows/dbt.yml)
+
 An end-to-end analytics-engineering project: raw operational data is loaded into
 **Snowflake**, transformed with **dbt** into clean, tested, documented tables, and
 exposed as analytics-ready marts for a BI tool. Built with software-engineering
