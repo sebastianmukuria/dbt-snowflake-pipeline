@@ -4,4 +4,4 @@ select
     product_name,
     category,
     price as unit_price
-from {{ ref('raw_products') }}
+from {{ source('coffee_shop', 'raw_products') }}

@@ -1,8 +1,8 @@
--- Staging: one model per raw table. Light cleanup only (rename/cast), no joins.
--- We read from the seed with the ref() function, just like any other model.
+-- Staging: one model per raw source. Light cleanup only (rename/cast), no joins.
+-- Reads from the declared source (see _sources.yml), not the seed directly.
 select
     customer_id,
     customer_name,
     city,
     signup_date
-from {{ ref('raw_customers') }}
+from {{ source('coffee_shop', 'raw_customers') }}

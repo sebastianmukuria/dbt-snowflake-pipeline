@@ -1,0 +1,24 @@
+version: 2
+
+# -----------------------------------------------------------------------------
+# SOURCES — the raw tables our pipeline reads FROM.
+#
+# In production these would be tables an ingestion tool (Fivetran/Airbyte) loads
+# from the point-of-sale and loyalty-app databases. Here we simulate that load
+# with `dbt seed` (the CSVs in seeds/), which lands the same raw_* tables.
+#
+# Declaring them as sources lets staging models reference them with
+# source('coffee_shop', 'raw_orders') and gives us source-level tests + docs.
+# -----------------------------------------------------------------------------
+sources:
+  - name: coffee_shop
+    description: "Raw operational data landed in the warehouse (simulated via dbt seed)."
+    database: dbt_db
+    schema: dbt_schema
+    tables:
+      - name: raw_customers
+        description: "Raw customer records from the loyalty app."
+      - name: raw_products
+        description: "Raw product/menu catalog."
+      - name: raw_orders
+        description: "Raw order line items from the point-of-sale system."

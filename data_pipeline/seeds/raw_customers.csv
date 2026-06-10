@@ -1,9 +1,51 @@
 customer_id,customer_name,signup_date,city
-1,Ava Martinez,2023-01-15,Austin
-2,Liam Chen,2023-02-02,Austin
-3,Noah Patel,2023-02-20,Dallas
-4,Emma Johnson,2023-03-11,Houston
-5,Olivia Brown,2023-04-05,Dallas
-6,William Lee,2023-05-19,Austin
-7,Sophia Garcia,2023-06-30,Houston
-8,James Wilson,2023-08-12,Dallas
+1,Abigail Johnson,2023-12-20,Houston
+2,James Wilson,2023-10-22,Austin
+3,Ethan Patel,2023-03-05,San Antonio
+4,Liam Martinez,2023-11-15,Dallas
+5,James Martinez,2023-03-20,Dallas
+6,Emily Jones,2023-09-11,San Antonio
+7,Evelyn Nguyen,2023-12-29,Dallas
+8,Emily Jones,2023-07-11,Houston
+9,Olivia Garcia,2023-07-13,Austin
+10,Noah Smith,2023-11-13,Houston
+11,Jackson Lopez,2023-02-26,Houston
+12,Logan Chen,2023-05-11,Austin
+13,Aiden Smith,2023-11-22,Houston
+14,Sofia Lopez,2023-03-12,Dallas
+15,Emily Patel,2023-12-09,Dallas
+16,Elizabeth Kim,2023-11-22,Dallas
+17,Jackson Johnson,2023-06-21,Houston
+18,Amelia Lopez,2023-10-10,Houston
+19,Lucas Garcia,2023-01-23,Houston
+20,Emily Patel,2023-02-24,Dallas
+21,Daniel Wilson,2023-10-10,San Antonio
+22,Charlotte Nguyen,2023-02-08,Dallas
+23,Ethan Davis,2023-12-04,Dallas
+24,Sofia Chen,2023-07-24,San Antonio
+25,Isabella Patel,2023-09-15,Houston
+26,Sophia Rivera,2023-06-13,San Antonio
+27,Olivia Nguyen,2023-10-22,Dallas
+28,Jacob Nguyen,2023-03-08,San Antonio
+29,Ella Smith,2023-06-30,Dallas
+30,Olivia Rivera,2023-11-16,Austin
+31,Jackson Johnson,2023-10-15,Dallas
+32,Logan Jones,2023-03-02,Austin
+33,Charlotte Smith,2023-03-02,San Antonio
+34,Harper Nguyen,2023-03-24,Austin
+35,Ethan Johnson,2023-01-17,Houston
+36,Elizabeth Davis,2023-11-05,Houston
+37,Henry Lee,2023-05-14,Austin
+38,Jacob Nguyen,2023-04-20,Dallas
+39,Harper Johnson,2023-02-15,Houston
+40,Sofia Garcia,2023-10-15,Houston
+41,Elizabeth Lee,2023-03-31,Austin
+42,Michael Davis,2023-04-26,Austin
+43,Emma Lopez,2023-07-28,Dallas
+44,Liam Wilson,2023-03-17,Austin
+45,Noah Rivera,2023-11-27,Dallas
+46,Olivia Rivera,2023-03-26,Dallas
+47,Isabella Jones,2023-09-15,Dallas
+48,Emily Kim,2023-06-11,Houston
+49,Amelia Williams,2023-11-01,Dallas
+50,James Patel,2023-07-12,Austin

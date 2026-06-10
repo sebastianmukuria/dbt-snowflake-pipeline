@@ -2,10 +2,13 @@ version: 2
 
 models:
   - name: fct_orders
-    description: "One row per item ordered, enriched with customer + product + revenue. The table Sigma connects to."
+    description: "One row per order line, enriched with customer + product + revenue. The table Sigma connects to."
     columns:
+      - name: order_line_id
+        description: "Grain of the table: one row per order line."
+        data_tests: [unique, not_null]
       - name: order_id
-        data_tests: [not_null]      # not unique: an order can have several items
+        data_tests: [not_null]      # not unique: an order can have several lines
       - name: revenue
         description: "quantity * unit_price for the line."
         data_tests: [not_null]

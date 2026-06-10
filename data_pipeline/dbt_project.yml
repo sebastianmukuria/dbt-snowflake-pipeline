@@ -44,6 +44,7 @@ seeds:
     raw_orders:
       +column_types:
         order_id: integer
+        line_number: integer
         customer_id: integer
         product_id: integer
         order_date: date

@@ -17,6 +17,7 @@ products as (
 )
 
 select
+    orders.order_line_id,
     orders.order_id,
     orders.order_date,
     customers.customer_id,

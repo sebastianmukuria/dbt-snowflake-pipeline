@@ -24,10 +24,13 @@ models:
                 values: ['coffee', 'tea', 'pastry']
 
   - name: stg_orders
-    description: "One row per item ordered."
+    description: "One row per line item on a ticket (an order_id can span several lines)."
     columns:
-      - name: order_id
+      - name: order_line_id
+        description: "Surrogate key: order_id + line_number. Unique per row."
         data_tests: [unique, not_null]
+      - name: order_id
+        data_tests: [not_null]
       - name: customer_id
         data_tests:
           - relationships:

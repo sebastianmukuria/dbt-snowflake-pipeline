@@ -58,8 +58,14 @@ warehouse for dev and only scale up for heavy jobs."
 right order, with tests and docs.
 
 **Do this — and understand each idea in the code:**
-- **Seeds** — `dbt seed` loads `seeds/*.csv` into Snowflake. That's our raw layer.
-- **`ref()`** — how models depend on each other; builds the **DAG** (see `fct_orders.sql`).
+- **Seeds** — `dbt seed` loads `seeds/*.csv` into Snowflake. That's our raw layer (a
+  stand-in for what an ingestion tool would load in production).
+- **Sources** — `_sources.yml` declares those raw tables as `source()`s; staging reads
+  from `source('coffee_shop', ...)`, decoupling transforms from how raw data arrives.
+- **`ref()`** — how models depend on *each other*; together with sources it builds the
+  **DAG** / lineage graph (see `fct_orders.sql`).
+- **Surrogate key** — `stg_orders` builds `order_line_id` from `order_id + line_number`
+  so each line item has one unique id (an order/ticket can have several lines).
 - **Materializations** — staging = `view`, marts = `table` (set in `dbt_project.yml`). Know why.
 - **Layers** — staging (clean) → marts (business logic / joins / aggregates).
 - **Tests** — generic in the `_*.yml` files (`unique`, `not_null`, `relationships`,
