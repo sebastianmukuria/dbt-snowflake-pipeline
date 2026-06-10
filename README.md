@@ -2,6 +2,8 @@
 
 [![dbt build](https://github.com/sebastianmukuria/dbt-snowflake-pipeline/actions/workflows/dbt.yml/badge.svg)](https://github.com/sebastianmukuria/dbt-snowflake-pipeline/actions/workflows/dbt.yml)
 
+**[View the live dashboard →](https://sebastianmukuria.github.io/dbt-snowflake-pipeline/)** (built with Evidence.dev on the dbt marts)
+
 I built this to learn dbt and Snowflake. It's a small pipeline for a made-up coffee
 shop: raw data about customers, products, and orders gets loaded into Snowflake, and
 dbt turns it into clean tables you could put a dashboard on top of.
