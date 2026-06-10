@@ -34,7 +34,8 @@ jobs:
         working-directory: reports
         # Project Pages serve under /<repo>/, so the site needs that base path.
         # Done here (not in the committed config) so local `npm run dev` stays at /.
-        run: printf '\ndeployment:\n  basePath: /dbt-snowflake-pipeline\n' >> evidence.config.yaml
+        run: |
+          printf '\ndeployment:\n  basePath: /dbt-snowflake-pipeline\n' >> evidence.config.yaml
 
       - name: Install and build
         working-directory: reports
